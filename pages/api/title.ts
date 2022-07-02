@@ -21,7 +21,7 @@ export default async function handler(
   await cors(req, res);
   try {
     const urls = await urlsMD(site);
-    res.status(200).json(urls);
+    res.status(200).json({ link: urls });
   } catch (error) {
     res.status(500).json({ error: "url 不合法" });
   }
